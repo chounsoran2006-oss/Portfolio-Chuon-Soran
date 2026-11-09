@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUON SORAN | Frontend Web Developer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of CHUON SORAN - Frontend Web Developer specializing in building modern, responsive, user-friendly websites with clean UI/UX and efficient code.">
+    <meta name="keywords"
+        content="CHUON SORAN, Web Developer, Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Portfolio">
+    <meta name="author" content="CHUON SORAN">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="profile.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-darkBg text-white transition-colors duration-300 min-h-screen flex flex-col justify-between selection:bg-primaryBlue selection:text-white">
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"
+        class="scroll-progress fixed top-0 left-0 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent z-50 transition-all duration-150">
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-gray-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-1 h-20 flex items-center justify-between gap-3">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primaryBlue to-orangeAccent flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">
+                    CS
+                </div>
+                <div class="brand-copy flex flex-col">
+                    <span
+                        class="brand-name font-extrabold text-lg tracking-wider text-white group-hover:text-primaryBlue transition-colors">CHUON SORAN</span>
+                    <span class="text-xs text-orangeAccent font-mono">DEV.PORTFOLIO</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-medium">
+                <a href="#home"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Home</a>
+                <a href="#about"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">About</a>
+                <a href="#skills"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Skills</a>
+                <a href="#services"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Services</a>
+                <a href="#projects"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Projects</a>
+                <a href="#experience"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Experience</a>
+                <a href="#education"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Education</a>
+                <a href="#certificates"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Certificates</a>
+                <a href="#blog"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Blog</a>
+                <a href="#contact"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">Contact</a>
+                <a href="#resume"
+                    class="nav-link px-3 py-2 rounded-lg text-customGray hover:text-white hover:bg-gray-800/50 transition">CV</a>
+            </nav>
+
+            <!-- Quick Actions -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <!-- Theme Switcher -->
+                <button id="theme-toggle" aria-label="Toggle light/dark theme"
+                    class="p-2.5 rounded-xl bg-secondaryBg border border-gray-700/50 text-customGray hover:text-white hover:border-primaryBlue transition">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
+
+                <a href="#contact"
+                    class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-primaryBlue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium text-sm shadow-glow transition duration-300 transform hover:-translate-y-0.5">
+                    Hire Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center space-x-3 lg:hidden">
+                <button id="theme-toggle-mobile" aria-label="Toggle light/dark theme"
+                    class="p-2 rounded-lg bg-secondaryBg border border-gray-700/50 text-customGray">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open navigation menu"
+                    class="p-2.5 rounded-xl bg-secondaryBg text-customGray hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-b border-gray-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#home"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Home</a>
+            <a href="#about"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">About
+                Me</a>
+            <a href="#skills"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Skills
+                & Tech</a>
+            <a href="#services"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Services</a>
+            <a href="#projects"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Projects
+                Portfolio</a>
+            <a href="#experience"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Experience</a>
+            <a href="#education"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Education</a>
+            <a href="#certificates"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Certificates</a>
+            <a href="#blog"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Blog
+                & Articles</a>
+            <a href="#contact"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Contact
+                Me</a>
+            <a href="#resume"
+                class="mobile-nav-link block px-4 py-2.5 rounded-lg text-customGray hover:bg-primaryBlue hover:text-white transition">Online
+                Resume</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 1. HERO SECTION -->
+        <section id="home"
+            class="relative min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 overflow-hidden">
+            <!-- Background Glow Orbs -->
+            <div class="absolute top-1/4 left-10 w-96 h-96 bg-primaryBlue/20 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-10 right-10 w-96 h-96 bg-orangeAccent/15 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                <!-- Text Intro Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div
+                        class="hero-availability inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-primaryBlue/30 text-primaryBlue text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                        <span>Available for Frontend Opportunities & Projects</span>
+                    </div>
+
+                    <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight"> <br class="hidden sm:inline">
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primaryBlue via-blue-400 to-orangeAccent">CHUON
+                            SORAN</span>
+                    </h1>
+
+                    <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-200 h-10">
+                        I am a <span id="typed-text"
+                            class="text-primaryBlue border-b-2 border-orangeAccent pb-1"></span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-customGray max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                        "I'm a Frontend Web Developer passionate about building modern, responsive, and user-friendly
+                        websites. I enjoy transforming creative ideas into beautiful digital experiences."
+                    </p>
+
+                    <!-- Slogan Badge -->
+                    <div
+                        class="slogan-card p-4 rounded-xl bg-secondaryBg/80 border-l-4 border-orangeAccent text-sm text-gray-300 font-mono italic">
+                        <i class="fas fa-quote-left text-orangeAccent mr-2"></i>
+                        Building Digital Experiences, One Line of Code at a Time.
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects"
+                            class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-primaryBlue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold text-base shadow-glow transition duration-300 transform hover:-translate-y-1 flex items-center space-x-2">
+                            <span>View My Projects</span>
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#contact"
+                            class="px-7 py-3.5 rounded-xl bg-secondaryBg hover:bg-gray-800 text-white font-semibold text-base border border-gray-700/80 transition duration-300 transform hover:-translate-y-1 flex items-center space-x-2">
+                            <i class="far fa-paper-plane"></i>
+                            <span>Contact Me</span>
+                        </a>
+                        <a href="#resume" data-action="print-cv"
+                            class="px-6 py-3.5 rounded-xl bg-orangeAccent/10 hover:bg-orangeAccent/20 text-orangeAccent border border-orangeAccent/40 font-semibold text-base transition duration-300 flex items-center space-x-2">
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="pt-6 flex items-center justify-center lg:justify-start space-x-4">
+                        <span class="text-xs font-mono text-customGray uppercase tracking-wider">Connect:</span>
+                        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub Profile"
+                            class="w-10 h-10 rounded-xl bg-secondaryBg flex items-center justify-center text-customGray hover:text-white hover:bg-primaryBlue transition duration-300">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Profile"
+                            class="w-10 h-10 rounded-xl bg-secondaryBg flex items-center justify-center text-customGray hover:text-white hover:bg-primaryBlue transition duration-300">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="mailto:soran.chuon@example.com" aria-label="Email Contact"
+                            class="w-10 h-10 rounded-xl bg-secondaryBg flex items-center justify-center text-customGray hover:text-white hover:bg-orangeAccent transition duration-300">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </a>
+                        <a href="https://telegram.org" target="_blank" rel="noopener" aria-label="Telegram Profile"
+                            class="w-10 h-10 rounded-xl bg-secondaryBg flex items-center justify-center text-customGray hover:text-white hover:bg-blue-400 transition duration-300">
+                            <i class="fab fa-telegram-plane text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Graphic & Floating Badges -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                        <!-- Outer Rotating Ring -->
+                        <div
+                            class="orbit-slow absolute inset-0 rounded-full border-2 border-dashed border-primaryBlue/40 animate-spin">
+                        </div>
+                        <div
+                            class="orbit-slower-reverse absolute -inset-4 rounded-full border border-orangeAccent/30 animate-spin">
+                        </div>
+
+                        <!-- Card Image Frame -->
+                        <div
+                            class="w-full h-full rounded-3xl glass-card p-4 overflow-hidden border-2 border-primaryBlue/30 shadow-2xl relative z-10 flex items-center justify-center">
+                            <div
+                                class="w-full h-full rounded-2xl bg-gradient-to-br from-secondaryBg to-cardBg flex flex-col items-center justify-center text-center p-6 border border-gray-800">
+                                <div
+                                    class="profile-photo-frame w-32 h-32 rounded-full bg-gradient-to-tr from-primaryBlue to-orangeAccent p-1 mb-4">
+                                    <div class="w-full h-full rounded-full overflow-hidden">
+                                        <img src="profile.png" alt="CHUON SORAN profile photo"
+                                            class="profile-photo w-full h-full rounded-full object-cover">
+                                    </div>
+                                </div>
+                                <h3 class="font-bold text-xl text-white">CHUON SORAN</h3>
+                                <p class="text-xs text-orangeAccent font-mono mt-1">FRONTEND WEB DEVELOPER</p>
+                                <div class="mt-4 flex items-center space-x-2 text-xs text-customGray">
+                                    <i class="fas fa-map-marker-alt text-red-400"></i>
+                                    <span>Phnom Penh, Cambodia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div
+                            class="absolute -top-4 -left-6 z-20 animate-float px-3 py-2 rounded-xl glass-card border border-primaryBlue/50 text-xs font-mono flex items-center space-x-2 shadow-lg">
+                            <i class="fab fa-html5 text-orange-500 text-base"></i>
+                            <span class="text-white font-bold">HTML5 / CSS3</span>
+                        </div>
+
+                        <div
+                            class="absolute top-1/2 -right-8 z-20 animate-float-delayed px-3 py-2 rounded-xl glass-card border border-yellow-500/50 text-xs font-mono flex items-center space-x-2 shadow-lg">
+                            <i class="fab fa-js text-yellow-400 text-base"></i>
+                            <span class="text-white font-bold">JavaScript ES6+</span>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-4 left-4 z-20 animate-float px-3 py-2 rounded-xl glass-card border border-teal-400/50 text-xs font-mono flex items-center space-x-2 shadow-lg">
+                            <i class="fab fa-css3-alt text-teal-400 text-base"></i>
+                            <span class="text-white font-bold">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar Counter Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                    <div
+                        class="p-6 rounded-2xl glass-card border border-gray-800 text-center transform hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primaryBlue to-blue-400 font-mono">
+                            15+</div>
+                        <div class="text-xs sm:text-sm text-customGray mt-2 font-medium">Projects Completed</div>
+                    </div>
+
+                    <div
+                        class="p-6 rounded-2xl glass-card border border-gray-800 text-center transform hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orangeAccent to-amber-400 font-mono">
+                            10+</div>
+                        <div class="text-xs sm:text-sm text-customGray mt-2 font-medium">Technologies Learned</div>
+                    </div>
+
+                    <div
+                        class="p-6 rounded-2xl glass-card border border-gray-800 text-center transform hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 font-mono">
+                            5+</div>
+                        <div class="text-xs sm:text-sm text-customGray mt-2 font-medium">Certificates Earned</div>
+                    </div>
+
+                    <div
+                        class="p-6 rounded-2xl glass-card border border-gray-800 text-center transform hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-mono">
+                            2+</div>
+                        <div class="text-xs sm:text-sm text-customGray mt-2 font-medium">Years Intensive Learning</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="about" class="py-20 bg-secondaryBg/50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-orangeAccent uppercase tracking-widest mb-2">// 01. Who I Am</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">About Me & Developer Journey</h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Bio & Goals Column -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="p-8 rounded-2xl glass-card border border-gray-800 space-y-4">
+                            <h4 class="text-xl font-bold text-white flex items-center">
+                                <i class="fas fa-terminal text-primaryBlue mr-3"></i>
+                                Professional Introduction
+                            </h4>
+                            <p class="text-customGray leading-relaxed">
+                                I am an enthusiastic <strong class="text-white">Frontend Web Developer</strong> with a
+                                passion for turning complex problems into elegant, user-centric web solutions. My
+                                journey began with curiosity about how the web works, leading me to master core
+                                standards like <span class="text-primaryBlue font-semibold">HTML5, CSS3, and
+                                    JavaScript</span>, before adopting modern workflow tools like Tailwind CSS and Git.
+                            </p>
+                            <p class="text-customGray leading-relaxed">
+                                I focus heavily on writing clean, accessible, and structured code. I thrive in
+                                environments where continuous learning is embraced, and I aim to contribute to
+                                meaningful digital solutions for international teams and clients.
+                            </p>
+                        </div>
+
+                        <!-- Strengths & Passion Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-6 rounded-2xl glass-card border border-gray-800">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-primaryBlue/10 text-primaryBlue flex items-center justify-center text-xl mb-4">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h5 class="font-bold text-white mb-2">Clean Architecture</h5>
+                                <p class="text-xs text-customGray">Writing maintainable, modular, and well-documented
+                                    semantic code.</p>
+                            </div>
+
+                            <div class="p-6 rounded-2xl glass-card border border-gray-800">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-orangeAccent/10 text-orangeAccent flex items-center justify-center text-xl mb-4">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h5 class="font-bold text-white mb-2">Responsive UI/UX</h5>
+                                <p class="text-xs text-customGray">Ensuring seamless visual alignment across mobile,
+                                    tablet, and desktop viewports.</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Details Card -->
+                        <div
+                            class="p-6 rounded-2xl glass-card border border-gray-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm font-mono">
+                            <div>
+                                <span class="text-customGray block text-xs">Name:</span>
+                                <span class="text-white font-semibold">CHUON SORAN</span>
+                            </div>
+                            <div>
+                                <span class="text-customGray block text-xs">Role:</span>
+                                <span class="text-primaryBlue font-semibold">Frontend Dev</span>
+                            </div>
+                            <div>
+                                <span class="text-customGray block text-xs">Location:</span>
+                                <span class="text-white font-semibold">Cambodia</span>
+                            </div>
+                            <div>
+                                <span class="text-customGray block text-xs">Status:</span>
+                                <span class="text-green-400 font-semibold">Open to Work</span>
+                            </div>
+                            <div>
+                                <span class="text-customGray block text-xs">Language:</span>
+                                <span class="text-white font-semibold">Khmer, English</span>
+                            </div>
+                            <div>
+                                <span class="text-customGray block text-xs">Email:</span>
+                                <span class="text-orangeAccent font-semibold truncate block">soran@dev.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Column -->
+                    <div class="lg:col-span-5">
+                        <div class="p-8 rounded-2xl glass-card border border-gray-800">
+                            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <i class="fas fa-history text-orangeAccent mr-3"></i>
+                                Learning Milestone Timeline
+                            </h4>
+
+                            <div class="relative border-l-2 border-gray-700 ml-3 space-y-8">
+                                <div class="relative pl-6">
+                                    <span
+                                        class="absolute -left-2 top-1.5 w-4 h-4 rounded-full bg-primaryBlue ring-4 ring-darkBg"></span>
+                                    <span class="text-xs font-mono text-primaryBlue font-semibold">2024 - PRESENT</span>
+                                    <h5 class="font-bold text-white text-base">Advanced Web & Tooling</h5>
+                                    <p class="text-xs text-customGray mt-1">Mastering JavaScript ES6+, Tailwind CSS, Git
+                                        workflows, Python basics, and REST APIs.</p>
+                                </div>
+
+                                <div class="relative pl-6">
+                                    <span
+                                        class="absolute -left-2 top-1.5 w-4 h-4 rounded-full bg-orangeAccent ring-4 ring-darkBg"></span>
+                                    <span class="text-xs font-mono text-orangeAccent font-semibold">2023 - 2024</span>
+                                    <h5 class="font-bold text-white text-base">Frontend Foundations</h5>
+                                    <p class="text-xs text-customGray mt-1">Deep dive into semantic HTML5, CSS layout
+                                        techniques (Flexbox, Grid), Bootstrap, and DOM manipulation.</p>
+                                </div>
+
+                                <div class="relative pl-6">
+                                    <span
+                                        class="absolute -left-2 top-1.5 w-4 h-4 rounded-full bg-green-500 ring-4 ring-darkBg"></span>
+                                    <span class="text-xs font-mono text-green-400 font-semibold">2022 - 2023</span>
+                                    <h5 class="font-bold text-white text-base">First Steps into Code</h5>
+                                    <p class="text-xs text-customGray mt-1">Discovered web technologies, initial coding
+                                        logic, and created first static web page layouts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SKILLS & TECHNOLOGIES SECTION -->
+        <section id="skills" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-primaryBlue uppercase tracking-widest mb-2">// 02. Technical
+                        Toolkit</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Stack Proficiency</h3>
+                    <p class="text-customGray text-sm mt-3">Comprehensive breakdown of technical capabilities and tools
+                        I utilize regularly.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <!-- Skill Category Filter Tabs -->
+                <div class="flex justify-center space-x-2 sm:space-x-4 mb-12 flex-wrap gap-y-2">
+                    <button
+                        class="skill-tab-btn active px-5 py-2.5 rounded-xl bg-primaryBlue text-white font-medium text-sm transition shadow-glow"
+                        data-category="all">All Skills</button>
+                    <button
+                        class="skill-tab-btn px-5 py-2.5 rounded-xl bg-secondaryBg text-customGray hover:text-white font-medium text-sm transition"
+                        data-category="frontend">Frontend</button>
+                    <button
+                        class="skill-tab-btn px-5 py-2.5 rounded-xl bg-secondaryBg text-customGray hover:text-white font-medium text-sm transition"
+                        data-category="tools">Tools & Workflow</button>
+                    <button
+                        class="skill-tab-btn px-5 py-2.5 rounded-xl bg-secondaryBg text-customGray hover:text-white font-medium text-sm transition"
+                        data-category="other">Other Tech</button>
+                </div>
+
+                <!-- Skills Grid -->
+                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- HTML5 -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="frontend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-html5 text-orange-500 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">HTML5</h4>
+                                    <span class="text-xs text-customGray font-mono">Semantic Structure</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">90%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-90 bg-gradient-to-r from-orange-500 to-amber-400 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CSS3 -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="frontend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-css3-alt text-blue-500 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">CSS3</h4>
+                                    <span class="text-xs text-customGray font-mono">Flexbox / Grid / Animations</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">85%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-85 bg-gradient-to-r from-blue-500 to-indigo-400 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="frontend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-js text-yellow-400 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">JavaScript</h4>
+                                    <span class="text-xs text-customGray font-mono">ES6+ DOM & Async JS</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">80%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-80 bg-gradient-to-r from-yellow-400 to-amber-500 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tailwind CSS -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="frontend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-wind text-teal-400 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">Tailwind CSS</h4>
+                                    <span class="text-xs text-customGray font-mono">Utility-First Framework</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">85%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-85 bg-gradient-to-r from-teal-400 to-cyan-500 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bootstrap -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="frontend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-bootstrap text-purple-500 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">Bootstrap 5</h4>
+                                    <span class="text-xs text-customGray font-mono">Responsive UI Component Grid</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">80%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-80 bg-gradient-to-r from-purple-500 to-indigo-500 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Git & GitHub -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="tools">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-git-alt text-red-500 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">Git & GitHub</h4>
+                                    <span class="text-xs text-customGray font-mono">Version Control & Workflow</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">78%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-78 bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Figma -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="tools">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-figma text-pink-400 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">Figma</h4>
+                                    <span class="text-xs text-customGray font-mono">UI Design & Prototyping</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">75%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-75 bg-gradient-to-r from-pink-400 to-purple-400 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="other">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-python text-blue-400 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">Python Basics</h4>
+                                    <span class="text-xs text-customGray font-mono">Scripting & Logic</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">65%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-65 bg-gradient-to-r from-blue-400 to-yellow-400 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SQL Database -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 transform hover:-translate-y-1 transition duration-300"
+                        data-category="other">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-database text-emerald-400 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-white">SQL Foundations</h4>
+                                    <span class="text-xs text-customGray font-mono">Database Queries</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue font-bold">60%</span>
+                        </div>
+                        <div class="w-full bg-secondaryBg rounded-full h-2.5 overflow-hidden">
+                            <div
+                                class="skill-progress-60 bg-gradient-to-r from-emerald-400 to-teal-500 h-2.5 rounded-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SERVICES SECTION -->
+        <section id="services" class="py-20 bg-secondaryBg/40 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-orangeAccent uppercase tracking-widest mb-2">// 03. Solutions
+                        Offered</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Services & Expertise</h3>
+                    <p class="text-customGray text-sm mt-3">High-quality frontend development tailored for businesses
+                        and clients.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div
+                        class="glass-card p-8 rounded-2xl border border-gray-800 hover:border-primaryBlue/50 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-primaryBlue/10 text-primaryBlue flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Responsive Website Dev</h4>
+                            <p class="text-customGray text-sm leading-relaxed mb-6">
+                                Custom, mobile-first websites engineered with clean semantic HTML, Tailwind CSS, and
+                                lightweight JS for speed and reliability.
+                            </p>
+                        </div>
+                        <button data-action="service-modal" data-title="Responsive Website Development"
+                            data-description="Building pixel-perfect, lightning-fast responsive websites tailored to your specific audience across mobile, desktop, and tablet interfaces."
+                            class="text-xs font-semibold text-primaryBlue hover:text-orangeAccent font-mono flex items-center space-x-1">
+                            <span>Learn Details</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div
+                        class="glass-card p-8 rounded-2xl border border-gray-800 hover:border-orangeAccent/50 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-orangeAccent/10 text-orangeAccent flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Landing Page Design</h4>
+                            <p class="text-customGray text-sm leading-relaxed mb-6">
+                                High-converting, visually rich product landing pages designed to grab attention and
+                                boost client conversion rates.
+                            </p>
+                        </div>
+                        <button data-action="service-modal" data-title="Landing Page Design"
+                            data-description="Creating slick, modern landing pages optimized for performance, call-to-actions, and clear user journeys."
+                            class="text-xs font-semibold text-orangeAccent hover:text-primaryBlue font-mono flex items-center space-x-1">
+                            <span>Learn Details</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div
+                        class="glass-card p-8 rounded-2xl border border-gray-800 hover:border-primaryBlue/50 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Business Websites</h4>
+                            <p class="text-customGray text-sm leading-relaxed mb-6">
+                                Elegant company websites presenting key business services, team profiles, and brand
+                                identity with modern styling.
+                            </p>
+                        </div>
+                        <button data-action="service-modal" data-title="Business Website Development"
+                            data-description="Developing scalable business web pages with clear navigation, interactive contact forms, and structured content hierarchy."
+                            class="text-xs font-semibold text-emerald-400 hover:text-white font-mono flex items-center space-x-1">
+                            <span>Learn Details</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div
+                        class="glass-card p-8 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-user-ninja"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Portfolio Websites</h4>
+                            <p class="text-customGray text-sm leading-relaxed mb-6">
+                                Custom personal portfolios for professionals, designers, and engineers looking to
+                                highlight achievements cleanly.
+                            </p>
+                        </div>
+                        <button data-action="service-modal" data-title="Portfolio Website Development"
+                            data-description="Constructing unique personal sites equipped with dark/light themes, dynamic project filters, and printable resume integration."
+                            class="text-xs font-semibold text-purple-400 hover:text-white font-mono flex items-center space-x-1">
+                            <span>Learn Details</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div
+                        class="glass-card p-8 rounded-2xl border border-gray-800 hover:border-yellow-500/50 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Website Redesign</h4>
+                            <p class="text-customGray text-sm leading-relaxed mb-6">
+                                Transforming outdated websites into modern, mobile-responsive interfaces using modern
+                                web standards.
+                            </p>
+                        </div>
+                        <button data-action="service-modal" data-title="Website Redesign"
+                            data-description="Refactoring older web codebases into clean HTML5/Tailwind layouts with enhanced performance and refreshed design tokens."
+                            class="text-xs font-semibold text-yellow-400 hover:text-white font-mono flex items-center space-x-1">
+                            <span>Learn Details</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div
+                        class="glass-card p-8 rounded-2xl border border-gray-800 hover:border-pink-500/50 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Frontend UI Development</h4>
+                            <p class="text-customGray text-sm leading-relaxed mb-6">
+                                Translating Figma UI designs into responsive, clean HTML, CSS, and interactive Vanilla
+                                JavaScript components.
+                            </p>
+                        </div>
+                        <button data-action="service-modal" data-title="Frontend UI Development"
+                            data-description="Converting graphic designs (Figma/Adobe XD) into fully functional, accessible, cross-browser compatible frontend code."
+                            class="text-xs font-semibold text-pink-400 hover:text-white font-mono flex items-center space-x-1">
+                            <span>Learn Details</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROJECTS PORTFOLIO SECTION -->
+        <section id="projects" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-primaryBlue uppercase tracking-widest mb-2">// 04. Featured Works
+                    </h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Projects Showcase</h3>
+                    <p class="text-customGray text-sm mt-3">Interactive gallery of recent developer projects, landing
+                        pages, and web apps.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <!-- Search & Filters Container -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+                    <!-- Category Tabs -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button
+                            class="project-filter-btn active px-4 py-2 rounded-xl bg-primaryBlue text-white text-xs font-semibold"
+                            data-filter="all">All Projects</button>
+                        <button
+                            class="project-filter-btn px-4 py-2 rounded-xl bg-secondaryBg text-customGray hover:text-white text-xs font-semibold"
+                            data-filter="html-css">HTML & CSS</button>
+                        <button
+                            class="project-filter-btn px-4 py-2 rounded-xl bg-secondaryBg text-customGray hover:text-white text-xs font-semibold"
+                            data-filter="javascript">JavaScript</button>
+                        <button
+                            class="project-filter-btn px-4 py-2 rounded-xl bg-secondaryBg text-customGray hover:text-white text-xs font-semibold"
+                            data-filter="tailwind">Tailwind CSS</button>
+                        <button
+                            class="project-filter-btn px-4 py-2 rounded-xl bg-secondaryBg text-customGray hover:text-white text-xs font-semibold"
+                            data-filter="python">Python</button>
+                    </div>
+
+                    <!-- Live Project Search Input -->
+                    <div class="relative w-full md:w-64">
+                        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-customGray text-xs"></i>
+                        <input id="project-search-input" type="text" placeholder="Search projects..."
+                            class="w-full bg-secondaryBg text-white pl-9 pr-4 py-2 rounded-xl text-xs border border-gray-700/60 focus:outline-none focus:border-primaryBlue">
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-primaryBlue/50 transition duration-300"
+                        data-category="javascript" data-title="E-Commerce Tech Shop Frontend">
+                        <div>
+                            <div class="relative overflow-hidden h-48 bg-gray-900">
+                                <div
+                                    class="w-full h-full bg-gradient-to-br from-blue-900/40 to-darkBg flex items-center justify-center text-primaryBlue text-4xl group-hover:scale-110 transition duration-500">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <span
+                                    class="absolute top-3 right-3 px-3 py-1 rounded-full bg-primaryBlue text-white text-[10px] font-mono">JS
+                                    App</span>
+                            </div>
+
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white group-hover:text-primaryBlue transition">
+                                    E-Commerce Storefront</h4>
+                                <p class="text-customGray text-xs leading-relaxed mt-2">
+                                    Fully interactive online electronics store with shopping cart, category filtering,
+                                    search, and dynamic price calculations.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mt-4 font-mono text-[11px]">
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-blue-400">HTML5</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-teal-400">Tailwind</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-md bg-secondaryBg text-yellow-400">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/60 mt-4">
+                            <button data-action="project-modal" data-title="E-Commerce Storefront"
+                                data-overview="Interactive tech storefront built with pure JavaScript logic for managing state, updating cart quantities, and client rendering."
+                                data-tech-stack="HTML5, Tailwind CSS, JavaScript ES6" data-github="https://github.com"
+                                data-demo="https://example.com"
+                                class="text-xs font-semibold text-primaryBlue hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </button>
+                            <div class="flex space-x-3 text-sm">
+                                <a href="https://github.com" target="_blank" class="text-customGray hover:text-white"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://example.com" target="_blank"
+                                    class="text-customGray hover:text-primaryBlue"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-orangeAccent/50 transition duration-300"
+                        data-category="tailwind" data-title="Developer Portfolio Template">
+                        <div>
+                            <div class="relative overflow-hidden h-48 bg-gray-900">
+                                <div
+                                    class="w-full h-full bg-gradient-to-br from-orange-900/30 to-darkBg flex items-center justify-center text-orangeAccent text-4xl group-hover:scale-110 transition duration-500">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <span
+                                    class="absolute top-3 right-3 px-3 py-1 rounded-full bg-orangeAccent text-white text-[10px] font-mono">Tailwind</span>
+                            </div>
+
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white group-hover:text-orangeAccent transition">Modern
+                                    Dev Portfolio</h4>
+                                <p class="text-customGray text-xs leading-relaxed mt-2">
+                                    Sleek personal portfolio web app featuring modern glassmorphism aesthetic, theme
+                                    switcher, and smooth navigation.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mt-4 font-mono text-[11px]">
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-orange-400">HTML5</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-teal-400">Tailwind
+                                        CSS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/60 mt-4">
+                            <button data-action="project-modal" data-title="Modern Dev Portfolio"
+                                data-overview="A responsive portfolio UI layout optimized for fast loading times and clear presentation of developer skills."
+                                data-tech-stack="HTML5, Tailwind CSS" data-github="https://github.com"
+                                data-demo="https://example.com"
+                                class="text-xs font-semibold text-orangeAccent hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </button>
+                            <div class="flex space-x-3 text-sm">
+                                <a href="https://github.com" target="_blank" class="text-customGray hover:text-white"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://example.com" target="_blank"
+                                    class="text-customGray hover:text-orangeAccent"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-emerald-500/50 transition duration-300"
+                        data-category="html-css" data-title="Corporate Business Landing Page">
+                        <div>
+                            <div class="relative overflow-hidden h-48 bg-gray-900">
+                                <div
+                                    class="w-full h-full bg-gradient-to-br from-emerald-900/30 to-darkBg flex items-center justify-center text-emerald-400 text-4xl group-hover:scale-110 transition duration-500">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <span
+                                    class="absolute top-3 right-3 px-3 py-1 rounded-full bg-emerald-500 text-white text-[10px] font-mono">HTML/CSS</span>
+                            </div>
+
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white group-hover:text-emerald-400 transition">
+                                    Corporate Business Site</h4>
+                                <p class="text-customGray text-xs leading-relaxed mt-2">
+                                    Professional landing page designed for corporate services featuring custom flex
+                                    layouts and standard typography.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mt-4 font-mono text-[11px]">
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-blue-400">HTML5</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-purple-400">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/60 mt-4">
+                            <button data-action="project-modal" data-title="Corporate Business Site"
+                                data-overview="Clean business landing layout showcasing service features, testimonials grid, and responsive contact sections."
+                                data-tech-stack="HTML5, Bootstrap 5" data-github="https://github.com"
+                                data-demo="https://example.com"
+                                class="text-xs font-semibold text-emerald-400 hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </button>
+                            <div class="flex space-x-3 text-sm">
+                                <a href="https://github.com" target="_blank" class="text-customGray hover:text-white"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://example.com" target="_blank"
+                                    class="text-customGray hover:text-emerald-400"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-yellow-500/50 transition duration-300"
+                        data-category="python" data-title="Weather Forecast Dashboard Script">
+                        <div>
+                            <div class="relative overflow-hidden h-48 bg-gray-900">
+                                <div
+                                    class="w-full h-full bg-gradient-to-br from-yellow-900/30 to-darkBg flex items-center justify-center text-yellow-400 text-4xl group-hover:scale-110 transition duration-500">
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                                <span
+                                    class="absolute top-3 right-3 px-3 py-1 rounded-full bg-yellow-500 text-white text-[10px] font-mono">Python</span>
+                            </div>
+
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white group-hover:text-yellow-400 transition">Weather
+                                    Data App</h4>
+                                <p class="text-customGray text-xs leading-relaxed mt-2">
+                                    Weather dashboard utility querying external REST APIs to fetch real-time weather
+                                    forecasts and temperature indicators.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mt-4 font-mono text-[11px]">
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-yellow-400">Python</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-secondaryBg text-blue-400">REST API</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-800/60 mt-4">
+                            <button data-action="project-modal" data-title="Weather Data App"
+                                data-overview="Utility application fetching weather data from public APIs and parsing JSON results for intuitive UI display."
+                                data-tech-stack="Python, REST APIs" data-github="https://github.com"
+                                data-demo="https://example.com"
+                                class="text-xs font-semibold text-yellow-400 hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </button>
+                            <div class="flex space-x-3 text-sm">
+                                <a href="https://github.com" target="_blank" class="text-customGray hover:text-white"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://example.com" target="_blank"
+                                    class="text-customGray hover:text-yellow-400"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. EXPERIENCE SECTION -->
+        <section id="experience" class="py-20 bg-secondaryBg/40 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-orangeAccent uppercase tracking-widest mb-2">// 05. Growth Path
+                    </h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Experience & Practical Practice</h3>
+                    <p class="text-customGray text-sm mt-3">Hands-on learning, independent projects, and development
+                        practice.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="max-w-4xl mx-auto relative border-l-2 border-gray-800 pl-6 sm:pl-8 space-y-12">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-primaryBlue flex items-center justify-center text-white text-xs shadow-glow">
+                            <i class="fas fa-laptop-code text-[10px]"></i>
+                        </div>
+                        <div
+                            class="glass-card p-6 sm:p-8 rounded-2xl border border-gray-800 hover:border-primaryBlue/50 transition">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                                <h4 class="text-xl font-bold text-white">Frontend Web Developer Practice</h4>
+                                <span
+                                    class="text-xs font-mono text-primaryBlue px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/30 w-max mt-2 sm:mt-0">2023
+                                    - Present</span>
+                            </div>
+                            <h5 class="text-sm font-semibold text-orangeAccent mb-4">Self-Directed & Personal Projects
+                            </h5>
+                            <ul class="text-xs sm:text-sm text-customGray space-y-2 list-disc list-inside">
+                                <li>Designed and developed responsive web pages using modern HTML5, CSS3, and JavaScript
+                                    ES6.</li>
+                                <li>Implemented utility-first styling with Tailwind CSS for high performance UI
+                                    components.</li>
+                                <li>Managed repository codebases with Git and deployed live previews via GitHub Pages
+                                    and Netlify.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-orangeAccent flex items-center justify-center text-white text-xs shadow-glow-orange">
+                            <i class="fas fa-graduation-cap text-[10px]"></i>
+                        </div>
+                        <div
+                            class="glass-card p-6 sm:p-8 rounded-2xl border border-gray-800 hover:border-orangeAccent/50 transition">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                                <h4 class="text-xl font-bold text-white">Intensive Web Training Program</h4>
+                                <span
+                                    class="text-xs font-mono text-orangeAccent px-3 py-1 rounded-full bg-orangeAccent/10 border border-orangeAccent/30 w-max mt-2 sm:mt-0">2023</span>
+                            </div>
+                            <h5 class="text-sm font-semibold text-gray-300 mb-4">Practical IT Skills Development</h5>
+                            <ul class="text-xs sm:text-sm text-customGray space-y-2 list-disc list-inside">
+                                <li>Completed structured coursework focusing on fundamental computer science principles.
+                                </li>
+                                <li>Collaborated in small team sprints building functional static websites and
+                                    responsive landing pages.</li>
+                                <li>Practiced agile workflow, code review basics, and client-side troubleshooting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. EDUCATION SECTION -->
+        <section id="education" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-primaryBlue uppercase tracking-widest mb-2">// 06. Academic
+                        Foundations</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Education & Training</h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Education Card 1 -->
+                    <div class="glass-card p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-primaryBlue/10 text-primaryBlue flex items-center justify-center text-xl mb-4">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <span class="text-xs font-mono text-primaryBlue">2022 - PRESENT</span>
+                            <h4 class="text-xl font-bold text-white mt-1">Passerelles Numériques Cambodia</h4>
+                            <p class="text-sm text-orangeAccent font-medium mt-1">Web Development & IT Training Program
+                            </p>
+                            <p class="text-xs text-customGray leading-relaxed mt-3">
+                                Comprehensive training in frontend development, programming fundamentals, software
+                                logic, and professional soft skills tailored for the tech industry.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-customGray font-mono">
+                            Focus: HTML, CSS, JS, Git, Professional English
+                        </div>
+                    </div>
+
+                    <!-- Education Card 2 -->
+                    <div class="glass-card p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orangeAccent/10 text-orangeAccent flex items-center justify-center text-xl mb-4">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <span class="text-xs font-mono text-orangeAccent">HIGH SCHOOL DIPLOMA</span>
+                            <h4 class="text-xl font-bold text-white mt-1">General Secondary Education</h4>
+                            <p class="text-sm text-gray-300 font-medium mt-1">High School Graduate</p>
+                            <p class="text-xs text-customGray leading-relaxed mt-3">
+                                Completed secondary education with strong focus on mathematics, logical reasoning, and
+                                basic computer science literacy.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-customGray font-mono">
+                            Focus: Mathematics, Logic, Problem Solving
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CERTIFICATES & ACHIEVEMENTS SECTION -->
+        <section id="certificates" class="py-20 bg-secondaryBg/40 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-orangeAccent uppercase tracking-widest mb-2">// 07. Verified
+                        Learning</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Certificates & Credentials</h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Cert 1 -->
+                    <div
+                        class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-primaryBlue/40 transition">
+                        <div
+                            class="w-full h-36 bg-gray-900 rounded-xl mb-4 flex items-center justify-center border border-gray-800">
+                            <i class="fas fa-certificate text-4xl text-primaryBlue"></i>
+                        </div>
+                        <span class="text-[11px] font-mono text-primaryBlue">ISSUED: 2023</span>
+                        <h4 class="font-bold text-white text-base mt-1">Responsive Web Design</h4>
+                        <p class="text-xs text-customGray mt-1">FreeCodeCamp / Online Course</p>
+                        <button data-action="certificate-modal" data-title="Responsive Web Design Certificate"
+                            data-description="Certified for completing 300+ hours of responsive design challenges covering HTML flexbox, grid, and CSS architecture."
+                            class="mt-4 text-xs font-semibold text-primaryBlue hover:underline font-mono block">
+                            View Verified Details &rarr;
+                        </button>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div
+                        class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-orangeAccent/40 transition">
+                        <div
+                            class="w-full h-36 bg-gray-900 rounded-xl mb-4 flex items-center justify-center border border-gray-800">
+                            <i class="fas fa-award text-4xl text-orangeAccent"></i>
+                        </div>
+                        <span class="text-[11px] font-mono text-orangeAccent">ISSUED: 2023</span>
+                        <h4 class="font-bold text-white text-base mt-1">JavaScript Algorithms</h4>
+                        <p class="text-xs text-customGray mt-1">Developer Training Course</p>
+                        <button data-action="certificate-modal" data-title="JavaScript Algorithms Certificate"
+                            data-description="Certification covering ES6 syntax, array methods, DOM manipulation logic, and data structure basics."
+                            class="mt-4 text-xs font-semibold text-orangeAccent hover:underline font-mono block">
+                            View Verified Details &rarr;
+                        </button>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-teal-400/40 transition">
+                        <div
+                            class="w-full h-36 bg-gray-900 rounded-xl mb-4 flex items-center justify-center border border-gray-800">
+                            <i class="fas fa-shield-alt text-4xl text-teal-400"></i>
+                        </div>
+                        <span class="text-[11px] font-mono text-teal-400">ISSUED: 2024</span>
+                        <h4 class="font-bold text-white text-base mt-1">Git & GitHub Essentials</h4>
+                        <p class="text-xs text-customGray mt-1">Version Control Workshop</p>
+                        <button data-action="certificate-modal" data-title="Git &amp; GitHub Certificate"
+                            data-description="Covers practical command-line version control, branching strategies, commit hygiene, and collaborative pull requests."
+                            class="mt-4 text-xs font-semibold text-teal-400 hover:underline font-mono block">
+                            View Verified Details &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. BLOG & ARTICLES SECTION -->
+        <section id="blog" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-primaryBlue uppercase tracking-widest mb-2">// 08. Thoughts &
+                        Writing</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Blog & Articles</h3>
+                    <p class="text-customGray text-sm mt-3">Insights, tutorials, and reflections from my frontend
+                        journey.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <article
+                        class="glass-card rounded-2xl border border-gray-800 overflow-hidden flex flex-col justify-between hover:border-primaryBlue/50 transition duration-300">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between text-xs text-customGray font-mono mb-3">
+                                <span><i class="far fa-calendar-alt text-primaryBlue mr-1"></i> Oct 2024</span>
+                                <span><i class="far fa-clock text-orangeAccent mr-1"></i> 4 min read</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white hover:text-primaryBlue transition">My Journey as a
+                                Frontend Developer</h4>
+                            <p class="text-xs text-customGray leading-relaxed mt-2">
+                                Reflections on transitioning into coding, key challenges faced, and lessons learned
+                                while learning modern web stacks.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button data-action="blog-modal" data-title="My Journey as a Frontend Developer"
+                                data-summary="Full blog content detailing learning strategies, overcoming initial syntax hurdles, and building daily coding habits."
+                                class="text-xs font-semibold text-primaryBlue hover:underline flex items-center space-x-1">
+                                <span>Read Full Article</span>
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article
+                        class="glass-card rounded-2xl border border-gray-800 overflow-hidden flex flex-col justify-between hover:border-orangeAccent/50 transition duration-300">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between text-xs text-customGray font-mono mb-3">
+                                <span><i class="far fa-calendar-alt text-primaryBlue mr-1"></i> Nov 2024</span>
+                                <span><i class="far fa-clock text-orangeAccent mr-1"></i> 5 min read</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white hover:text-orangeAccent transition">Essential HTML &
+                                CSS Tips for Beginners</h4>
+                            <p class="text-xs text-customGray leading-relaxed mt-2">
+                                Best practices for structuring clean HTML semantics, avoiding common layout traps, and
+                                writing responsive CSS.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button data-action="blog-modal" data-title="Essential HTML &amp; CSS Tips"
+                                data-summary="Breakdown of Flexbox vs Grid, standard responsive viewport settings, and clean naming conventions."
+                                class="text-xs font-semibold text-orangeAccent hover:underline flex items-center space-x-1">
+                                <span>Read Full Article</span>
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article
+                        class="glass-card rounded-2xl border border-gray-800 overflow-hidden flex flex-col justify-between hover:border-emerald-400/50 transition duration-300">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between text-xs text-customGray font-mono mb-3">
+                                <span><i class="far fa-calendar-alt text-primaryBlue mr-1"></i> Dec 2024</span>
+                                <span><i class="far fa-clock text-orangeAccent mr-1"></i> 6 min read</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white hover:text-emerald-400 transition">Understanding
+                                JavaScript DOM Manipulation</h4>
+                            <p class="text-xs text-customGray leading-relaxed mt-2">
+                                Practical guide on handling user clicks, updating dynamic UI elements, and building
+                                interactive web pages with Vanilla JS.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button data-action="blog-modal" data-title="Understanding JavaScript DOM"
+                                data-summary="Detailed guide explaining querySelector, addEventListener, and dynamic element creation in Vanilla JS."
+                                class="text-xs font-semibold text-emerald-400 hover:underline flex items-center space-x-1">
+                                <span>Read Full Article</span>
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CONTACT ME SECTION -->
+        <section id="contact" class="py-20 bg-secondaryBg/40 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono text-orangeAccent uppercase tracking-widest mb-2">// 09. Get In Touch
+                    </h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Contact Me</h3>
+                    <p class="text-customGray text-sm mt-3">Have a project idea or job opportunity? Let's build
+                        something together.</p>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-4 rounded-full">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Contact Details Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card p-8 rounded-2xl border border-gray-800 space-y-6">
+                            <h4 class="text-xl font-bold text-white">Direct Communication</h4>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primaryBlue/10 text-primaryBlue flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-customGray font-mono block">Email Address</span>
+                                    <a href="mailto:soran.chuon@example.com"
+                                        class="text-white hover:text-primaryBlue font-semibold text-sm">soran.chuon@example.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-orangeAccent/10 text-orangeAccent flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-customGray font-mono block">Location</span>
+                                    <span class="text-white font-semibold text-sm">Phnom Penh, Cambodia</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-green-500/10 text-green-400 flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-customGray font-mono block">Telegram</span>
+                                    <a href="https://t.me/soranchuon" target="_blank"
+                                        class="text-white hover:text-green-400 font-semibold text-sm">@chuonsoran</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend Notice Box -->
+                        <div
+                            class="p-6 rounded-2xl bg-darkBg border border-gray-800 text-xs text-customGray leading-relaxed space-y-2">
+                            <div class="text-white font-bold font-mono flex items-center">
+                                <i class="fas fa-info-circle text-orangeAccent mr-2"></i> Form Submission Info
+                            </div>
+                            <p>
+                                This client-side form includes interactive Javascript validation. To connect real
+                                message delivery to your inbox, integrate a service like <code
+                                    class="text-primaryBlue">Formspree</code> or <code
+                                    class="text-primaryBlue">EmailJS</code> by setting the form action URL.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Column -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="glass-card p-8 rounded-2xl border border-gray-800 space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-mono text-customGray mb-2">FULL NAME *</label>
+                                    <input type="text" id="contact-name" required placeholder="John Doe"
+                                        class="w-full bg-secondaryBg border border-gray-700/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primaryBlue">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-mono text-customGray mb-2">EMAIL ADDRESS *</label>
+                                    <input type="email" id="contact-email" required placeholder="john@example.com"
+                                        class="w-full bg-secondaryBg border border-gray-700/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primaryBlue">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-customGray mb-2">SUBJECT *</label>
+                                <input type="text" id="contact-subject" required placeholder="Project Opportunity"
+                                    class="w-full bg-secondaryBg border border-gray-700/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primaryBlue">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-customGray mb-2">MESSAGE *</label>
+                                <textarea id="contact-message" rows="5" required
+                                    placeholder="Hello CHUON SORAN, I would like to discuss..."
+                                    class="w-full bg-secondaryBg border border-gray-700/60 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primaryBlue"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-primaryBlue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-sm shadow-glow transition duration-300 flex items-center justify-center space-x-2">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. ONLINE RESUME / CV SECTION -->
+        <section id="resume" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 no-print">
+                    <h2 class="text-xs font-mono text-primaryBlue uppercase tracking-widest mb-2">// 10. Printable
+                        Document</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Curriculum Vitae</h3>
+                    <div class="mt-4 flex justify-center space-x-4">
+                        <button data-action="print-cv"
+                            class="px-5 py-2.5 rounded-xl bg-primaryBlue text-white font-semibold text-xs shadow-glow flex items-center space-x-2">
+                            <i class="fas fa-print"></i>
+                            <span>Print / Download PDF</span>
+                        </button>
+                    </div>
+                    <div class="w-20 h-1 bg-gradient-to-r from-primaryBlue to-orangeAccent mx-auto mt-6 rounded-full">
+                    </div>
+                </div>
+
+                <!-- Printable Resume Layout -->
+                <div id="printable-resume"
+                    class="glass-card p-8 sm:p-12 rounded-2xl border border-gray-800 max-w-4xl mx-auto space-y-8 text-left">
+                    <!-- Header -->
+                    <div
+                        class="cv-header flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-700/60 pb-6">
+                        <div class="cv-person flex items-center gap-4">
+                            <img src="profile.png" alt="CHUON SORAN profile photo"
+                                class="cv-profile-photo w-20 h-24 rounded-lg object-cover border-2 border-primaryBlue">
+                            <div class="cv-identity">
+                                <h1 class="text-3xl font-extrabold text-white">CHUON SORAN</h1>
+                                <h2 class="text-base text-primaryBlue font-semibold font-mono mt-1">Frontend Web
+                                    Developer</h2>
+                            </div>
+                        </div>
+                        <div class="mt-4 sm:mt-0 text-xs text-customGray font-mono space-y-1">
+                            <div><i class="fas fa-envelope text-primaryBlue mr-1"></i> soran.chuon@example.com</div>
+                            <div><i class="fas fa-map-marker-alt text-orangeAccent mr-1"></i> Phnom Penh, Cambodia</div>
+                            <div><i class="fab fa-github text-white mr-1"></i> github.com/chuonsoran</div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div>
+                        <h3 class="text-sm font-bold font-mono text-orangeAccent uppercase tracking-wider mb-2">
+                            Professional Summary</h3>
+                        <p class="text-xs sm:text-sm text-customGray leading-relaxed">
+                            Passionate Junior Frontend Developer focused on building clean, mobile-responsive, and
+                            user-centric websites. Skilled in standard HTML5, CSS3, JavaScript ES6+, and Tailwind CSS
+                            framework with continuous practice in clean code architecture.
+                        </p>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div>
+                        <h3 class="text-sm font-bold font-mono text-primaryBlue uppercase tracking-wider mb-2">Technical
+                            Core Skills</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs text-customGray font-mono">
+                            <div>• HTML5 & Semantic Web</div>
+                            <div>• CSS3 (Flexbox/Grid)</div>
+                            <div>• JavaScript ES6+</div>
+                            <div>• Tailwind CSS / Bootstrap</div>
+                            <div>• Git & GitHub Version Control</div>
+                            <div>• Python & SQL Basics</div>
+                        </div>
+                    </div>
+
+                    <!-- Practical Experience -->
+                    <div>
+                        <h3 class="text-sm font-bold font-mono text-orangeAccent uppercase tracking-wider mb-3">Relevant
+                            Experience</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-white">
+                                    <span>Frontend Developer Practical Projects</span>
+                                    <span class="font-mono text-primaryBlue">2023 - Present</span>
+                                </div>
+                                <p class="text-xs text-customGray mt-1">
+                                    Engineered personal web projects including E-commerce storefront layouts, portfolio
+                                    templates, and weather dashboards prioritizing mobile responsiveness and
+                                    cross-browser stability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div>
+                        <h3 class="text-sm font-bold font-mono text-primaryBlue uppercase tracking-wider mb-3">Education
+                        </h3>
+                        <div class="flex justify-between text-xs font-bold text-white">
+                            <span>Web Development Training — Passerelles Numériques Cambodia</span>
+                            <span class="font-mono text-orangeAccent">2022 - Present</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Floating Action Buttons -->
+    <button id="back-to-top" aria-label="Back to top of page"
+        class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full glass-card border border-primaryBlue/40 text-primaryBlue flex items-center justify-center text-lg shadow-glow opacity-0 pointer-events-none transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Generic Modal Dialog -->
+    <div id="detail-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-gray-700 max-w-xl w-full relative transform scale-95 transition-transform duration-300"
+            id="modal-box">
+            <button data-action="close-modal" class="absolute top-4 right-4 text-customGray hover:text-white text-lg">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-white mb-3">Modal Title</h3>
+            <div id="modal-body" class="text-sm text-customGray leading-relaxed space-y-4">
+                <!-- Dynamic Content Insertion -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="glass-card border-t border-gray-800/80 py-12 relative z-10">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primaryBlue to-orangeAccent flex items-center justify-center text-white font-bold text-sm">
+                    CS
+                </div>
+                <span class="font-bold text-sm text-white">CHUON SORAN</span>
+                <span class="text-xs text-customGray">| Frontend Web Developer</span>
+            </div>
+
+            <p class="text-xs text-customGray font-mono text-center">
+                &copy; <span id="current-year"></span> CHUON SORAN. All rights reserved. Built with HTML, Tailwind &
+                Vanilla JS.
+            </p>
+
+            <div class="flex space-x-4 text-customGray text-base">
+                <a href="https://github.com" target="_blank" class="hover:text-white"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-primaryBlue"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:soran.chuon@example.com" class="hover:text-orangeAccent"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

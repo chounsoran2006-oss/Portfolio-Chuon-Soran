@@ -1,0 +1,232 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.scroll-progress {
+    width: 0%;
+}
+
+.orbit-slow {
+    animation-duration: 25s;
+}
+
+.orbit-slower-reverse {
+    animation-duration: 35s;
+    animation-direction: reverse;
+}
+
+.skill-progress-90 { width: 90%; }
+.skill-progress-85 { width: 85%; }
+.skill-progress-80 { width: 80%; }
+.skill-progress-78 { width: 78%; }
+.skill-progress-75 { width: 75%; }
+.skill-progress-65 { width: 65%; }
+.skill-progress-60 { width: 60%; }
+
+.profile-photo-frame {
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    object-position: center top;
+    transform: scale(1.2);
+}
+
+.cv-profile-photo {
+    object-position: center top;
+    flex-shrink: 0;
+}
+
+.brand-copy {
+    flex-shrink: 0;
+}
+
+.brand-name {
+    white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+    #home .hero-title {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+    #home h2 {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+
+    #home .hero-availability {
+        max-width: 100%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    #home .hero-availability span:last-child {
+        min-width: 0;
+    }
+}
+
+code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.glass-card {
+    background: rgba(21, 31, 50, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .glass-card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #dce4ef;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.light body.bg-darkBg {
+    background-color: #f4f7fb;
+    color: #1e293b;
+}
+
+.light .text-white {
+    color: #1e293b;
+}
+
+.light #home .bg-gradient-to-br .text-white {
+    color: #fff;
+}
+
+.light .text-customGray {
+    color: #526176;
+}
+
+.light .text-gray-200,
+.light .text-gray-300 {
+    color: #344256;
+}
+
+.light .slogan-card {
+    background-color: #fff;
+    color: #334155;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.light .bg-secondaryBg,
+.light .bg-darkBg:not(body),
+.light .bg-gray-900 {
+    background-color: #eaf0f7;
+}
+
+.light #about,
+.light #services,
+.light #experience,
+.light #certificates,
+.light #contact {
+    background-color: #edf2f8;
+}
+
+.light .border-gray-800,
+.light .border-gray-700\/50,
+.light .border-gray-700\/60,
+.light .border-gray-700\/80 {
+    border-color: #d7e0eb;
+}
+
+.light .nav-link:hover {
+    color: #1d4ed8;
+    background-color: #e5edf8;
+}
+
+.light .bg-gradient-to-r.text-white,
+.light .bg-gradient-to-tr.text-white,
+.light .bg-primaryBlue.text-white,
+.light [class~="bg-yellow-500"].text-white {
+    color: #fff;
+}
+
+.light input,
+.light textarea {
+    color: #1e293b;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+    color: #718096;
+}
+
+.light ::-webkit-scrollbar-track {
+    background: #eaf0f7;
+}
+
+.light ::-webkit-scrollbar-thumb {
+    background: #b7c4d5;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080B14;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1F2937;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 4s ease-in-out 2s infinite;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #printable-resume, #printable-resume * {
+        visibility: visible;
+    }
+
+    #printable-resume {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+    }
+
+    #printable-resume .cv-profile-photo {
+        width: 4.5rem;
+        height: 5.5rem;
+        border-radius: 0.5rem;
+        border-color: #3b82f6;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
